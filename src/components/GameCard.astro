@@ -36,6 +36,15 @@ const { game } = Astro.props;
                     )}
                 </div>
             )}
+            {game.starRating !== null ? (
+    <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-amber-900/60 text-amber-300" data-testid="game-rating">
+        ★ {game.starRating} / 5
+    </span>
+) : (
+    <span class="text-xs font-medium text-slate-500" data-testid="game-rating-empty">
+        No rating yet
+    </span>
+)}
 
             <p class="text-slate-400 mb-4 text-sm line-clamp-2" data-testid="game-description">{game.description}</p>
 
